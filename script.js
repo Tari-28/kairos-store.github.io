@@ -12,7 +12,7 @@ const products = [
     { id: 7, name: "White Angelic", price: 16000, img: "images/7.White Agelic.jpg", description: { id: "Gelang monokromatik yang elegan dengan nuansa putih bersih dan perak.", en: "An elegant monochromatic bracelet with clean white and silver nuances." }},
     { id: 8, name: "Lavender Dream", price: 12000, img: "images/8.Lavender Dream.jpg", description: { id: "Gelang cantik yang memancarkan pesona feminim dan elegan.", en: "A beautiful bracelet that exudes feminine and elegant charm." }}
 ];
-const noWhatsApp = "6282294070983";
+const noWhatsApp = "62895320181656";
 
 // ===================================================================================
 // FUNGSI UNTUK HALAMAN PRODUK (`produk.html`)
