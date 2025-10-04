@@ -501,3 +501,63 @@ nav ul li a {
 .content-page .section-title {
   text-align: center;
 }
+
+/* ================================================= */
+/* ATURAN RESPONSIVE - UNTUK TAMPILAN SMARTPHONE */
+/* ================================================= */
+
+/* Aturan ini akan aktif jika lebar layar 768px atau kurang */
+@media (max-width: 768px) {
+
+  /* 1. Perbaikan Header dan Menu Navigasi */
+  header .container {
+      flex-direction: column; /* Susun logo dan menu dari atas ke bawah */
+      gap: 15px;
+  }
+
+  nav ul {
+      flex-wrap: wrap; /* Izinkan menu untuk pindah baris jika tidak muat */
+      justify-content: center; /* Posisikan menu di tengah */
+      gap: 10px;
+  }
+
+  nav ul li {
+      margin-left: 10px; /* Kurangi jarak antar menu */
+  }
+  
+  .language-switcher {
+      margin-top: 10px; /* Beri jarak dari menu di atasnya */
+  }
+
+  /* 2. Perbaikan Ukuran Font dan Padding */
+  .hero-new h2, .section-title {
+      font-size: 32px; /* Perkecil ukuran judul */
+  }
+
+  .hero-new p {
+      font-size: 16px; /* Perkecil ukuran teks paragraf */
+  }
+
+  .hero-new {
+      padding: 50px 20px; /* Kurangi padding di bagian atas dan bawah */
+  }
+
+  /* 3. Perbaikan Halaman Kontak & Tentang Kami */
+  .modal-body, .contact-wrapper, .about-us-layout {
+      flex-direction: column; /* Susun elemen dari atas ke bawah */
+  }
+  
+  .content-page {
+      margin: 20px auto;
+      padding: 20px;
+  }
+
+  .about-us-text {
+      text-align: center; /* Buat teks rata tengah di layar kecil */
+  }
+  
+  /* 4. Perbaikan Footer */
+  footer .container p {
+      font-size: 14px; /* Perkecil font di footer */
+  }
+}
