@@ -1,0 +1,503 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap");
+
+/* Gaya Dasar */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FAF7F9; /* Sedikit krem agar lebih lembut */
+  color: #5c5470;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* BANNER GIF FULL-WIDTH */
+.full-width-banner {
+    width: 100%;
+    line-height: 0; /* Menghilangkan spasi bawah gambar */
+}
+.full-width-banner img {
+    width: 100%;
+    height: auto;
+}
+
+/* HEADER & NAVIGASI */
+header {
+  background-color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+  color: #b983ff;
+  font-size: 28px;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #5c5470;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #b983ff;
+}
+
+/* HERO SECTION BARU */
+.hero-new {
+  background-color: #FDEFF4; /* Warna pink pekat sesuai referensi */
+  color: #352f44; /* Warna teks lebih gelap agar kontras */
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-new h2 {
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero-new p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #b983ff;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #9d6ad6;
+}
+
+/* BAGIAN PRODUK (TETAP SAMA) */
+.products {
+  padding: 60px 0;
+  text-align: center;
+}
+.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #b983ff;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.product-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(185, 131, 255, 0.2);
+}
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e8a0bf;
+  margin-bottom: 15px;
+}
+.button {
+  background-color: #ffc0cb;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 50px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: #f7a2b6;
+}
+
+/* FOOTER (TETAP SAMA) */
+footer {
+  background-color: #352f44;
+  color: #faf0e6;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* GAYA UNTUK HALAMAN BARU (TENTANG KAMI & KONTAK) */
+.content-page {
+    padding: 60px 0;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.content-body {
+    text-align: left;
+    line-height: 1.8;
+    color: #5c5470;
+}
+
+.content-image {
+    max-width: 300px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.contact-info p {
+    font-size: 18px;
+}
+.contact-info a {
+    color: #b983ff;
+    text-decoration: none;
+}
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* GAYA TOMBOL BAHASA (TETAP SAMA) */
+.language-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.language-switcher button {
+    background-color: #ffc0cb;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.language-switcher button:hover {
+    background-color: #b983ff;
+}
+
+/* GAYA HALAMAN KERANJANG (TETAP SAMA) */
+.cart-section { padding: 60px 0; min-height: 60vh; }
+#cart-items-container { margin-top: 30px; border-top: 1px solid #eee; }
+.cart-item { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid #eee; gap: 15px; }
+.cart-item-img { width: 80px; height: 80px; object-fit: cover; border-radius: 10px; }
+.cart-item-details { flex-grow: 1; }
+.cart-item-details h4 { margin: 0 0 5px 0; color: #352f44; }
+.cart-item-details p { margin: 0; font-weight: bold; color: #e8a0bf; }
+.cart-item-actions { display: flex; align-items: center; gap: 10px; }
+.cart-item-actions button { background-color: #f0f0f0; border: 1px solid #ddd; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; }
+.cart-item-remove { background: none; border: none; color: #ff7b7b; cursor: pointer; font-weight: bold; }
+.cart-summary { margin-top: 40px; text-align: right; }
+.cart-summary h3 { font-size: 24px; color: #352f44; margin-bottom: 20px; }
+
+/* GAYA UNTUK NOTIFIKASI KERANJANG */
+nav ul li a {
+  position: relative; /* Diperlukan agar notifikasi bisa diposisikan */
+  padding-right: 10px; /* Beri sedikit ruang ekstra */
+}
+
+.cart-badge {
+  display: none; /* Sembunyi secara default */
+  position: absolute;
+  top: -5px; /* Posisikan sedikit ke atas */
+  right: -5px; /* Posisikan sedikit ke kanan */
+  background-color: #ff4757; /* Warna merah yang menarik perhatian */
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Membuatnya menjadi lingkaran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  border: 2px solid #fff; /* Memberi outline putih agar lebih jelas */
+}
+
+/* Penyesuaian untuk BANNER VIDEO */
+.full-width-banner video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* GAYA UNTUK DESKRIPSI PRODUK */
+.product-description {
+  font-size: 14px;
+  color: #8a8a8a;
+  line-height: 1.5;
+  margin: 0 0 15px 0; /* Memberi jarak ke tombol di bawahnya */
+  min-height: 60px; /* Menyamakan tinggi kotak deskripsi */
+}
+
+/* GAYA UNTUK POP-UP (MODAL) JUMLAH PRODUK */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  position: relative;
+  animation: slideIn 0.4s;
+}
+
+@keyframes slideIn {
+  from {top: -100px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.modal-body img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.modal-details {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.modal-details h3 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #352f44;
+}
+
+.modal-details p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #5c5470;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.quantity-selector button {
+  background-color: #ffc0cb;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.quantity-selector input {
+  width: 50px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 0 10px;
+  height: 35px;
+}
+
+.total-price-text {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+#modal-add-to-cart-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+}
+
+/* GAYA BARU UNTUK HALAMAN KONTAK */
+.contact-page-new .section-title {
+  text-align: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Agar responsif di layar kecil */
+  gap: 40px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.contact-intro {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.contact-channels {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff8f8;
+  border-radius: 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(185, 131, 255, 0.15);
+}
+
+.contact-icon {
+  background-color: #FDEFF4;
+  padding: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: #b983ff;
+}
+
+.contact-details h3 {
+  margin: 0 0 5px 0;
+  color: #352f44;
+}
+
+.contact-details p {
+  margin: 0;
+  color: #5c5470;
+  font-weight: bold;
+}
+
+.operational-hours {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+  color: #8a8a8a;
+}
+
+/* GAYA BARU UNTUK HALAMAN TENTANG KAMI (VERSI UPDATE) */
+.about-us-video-container {
+  max-width: 600px; /* Atur lebar maksimal video */
+  margin: 40px auto; /* Membuat video berada di tengah dengan jarak atas-bawah */
+}
+
+.about-us-video-container video {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-text {
+  max-width: 700px; /* Atur lebar maksimal teks */
+  margin: 0 auto; /* Membuat blok teks berada di tengah */
+  text-align: center; /* Membuat teks rata tengah */
+  line-height: 1.8;
+}
+
+/* PERBAIKAN: Membuat judul di halaman konten menjadi rata tengah */
+.content-page .section-title {
+  text-align: center;
+}

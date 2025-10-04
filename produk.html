@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-key="productTitle">Produk | Toko Gelang Kupu-Kupu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Kairos Bracelet 🦋</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-lang-key="navHome">Beranda</a></li>
+                <li><a href="produk.html" data-lang-key="navProducts">Produk</a></li>
+                <li><a href="keranjang.html" data-lang-key="navCart">Keranjang<span class="cart-badge">0</span></a></li>
+                <li><a href="tentang-kami.html" data-lang-key="navAbout">Tentang Kami</a></li>
+                <li><a href="kontak.html" data-lang-key="navContact">Kontak</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher">
+            <button onclick="setLanguage('id')">ID</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="products">
+        <div class="container">
+          <h2 class="section-title" data-lang-key="allProducts">Semua Produk Kami</h2>
+          <div class="product-grid" id="all-products-grid">
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p data-lang-key="footerText">© 2025 kairos bracelet | Dibuat oleh kel 12</p>
+      </div>
+    </footer>
+
+    <div id="quantity-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeQuantityModal()">&times;</span>
+          <div class="modal-body">
+              <img id="modal-product-img" src="" alt="Gambar Produk">
+              <div class="modal-details">
+                  <h3 id="modal-product-name">Nama Produk</h3>
+                  <p><span data-lang-key="modalUnitPrice">Harga Satuan</span>: <strong id="modal-product-price">Rp 0</strong></p>
+                  <div class="quantity-selector">
+                      <button id="modal-quantity-minus">-</button>
+                      <input type="number" id="modal-quantity-input" value="1" min="1">
+                      <button id="modal-quantity-plus">+</button>
+                  </div>
+                  <p class="total-price-text"><span data-lang-key="modalTotalPrice">Total Harga</span>: <strong id="modal-total-price">Rp 0</strong></p>
+                  <button id="modal-add-to-cart-btn" class="button" data-lang-key="addToCartBtn">Masukkan ke Keranjang</button>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Memanggil fungsi untuk menampilkan produk saat halaman dimuat
+      document.addEventListener('DOMContentLoaded', () => {
+        renderProducts();
+        setLanguage(localStorage.getItem('lang') || 'id'); // Set bahasa saat halaman dimuat
+      });
+    </script>
+  </body>
+</html>

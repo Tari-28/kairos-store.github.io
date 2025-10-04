@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-key="homeTitle">Kairos Bracelet | Lucu & Unik</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <h1 class="logo">Kairos Bracelet 🦋</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html" data-lang-key="navHome">Beranda</a></li>
+            <li><a href="produk.html" data-lang-key="navProducts">Produk</a></li>
+            <li><a href="keranjang.html" data-lang-key="navCart">Keranjang<span class="cart-badge">0</span></a></li>
+            <li><a href="tentang-kami.html" data-lang-key="navAbout">Tentang Kami</a></li>
+            <li><a href="kontak.html" data-lang-key="navContact">Kontak</a></li>
+          </ul>
+        </nav>
+        <div class="language-switcher">
+            <button onclick="setLanguage('id')">ID</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="full-width-banner">
+        <video src="images/Kairos bracelet.mp4" autoplay loop muted playsinline></video>
+      </div>
+      
+      <section class="hero-new">
+        <div class="container">
+          <h2 data-lang-key="heroTitle">Gelang Lucu Buatan Tangan</h2>
+          <p data-lang-key="heroSubtitle">Koleksi terbaru dengan desain imut untuk ceriakan harimu!</p>
+          <a href="produk.html" class="cta-button" data-lang-key="heroButton">Lihat Koleksi</a>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="container">
+          <h2 class="section-title" data-lang-key="bestsellerTitle">Produk Terlaris Kami</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="images/3.Fairy Butterfly.jpg" alt="Gelang Fairy Butterfly" />
+              <h3>Fairy Butterfly</h3>
+              <p class="price">Rp 16.000</p>
+              <button onclick="openQuantityModal(3)" class="button" data-lang-key="buyNow">Beli Sekarang</button>
+            </div>
+            <div class="product-card">
+              <img src="images/5.Berry Garden.jpg" alt="Gelang Berry Garden" />
+              <h3>Berry Garden</h3>
+              <p class="price">Rp 15.000</p>
+              <button onclick="openQuantityModal(5)" class="button" data-lang-key="buyNow">Beli Sekarang</button>
+            </div>
+            <div class="product-card">
+              <img src="images/1.Celestial Angel.jpg" alt="Gelang Celestial Angel" />
+              <h3>Celestial Angel</h3>
+              <p class="price">Rp 13.000</p>
+              <button onclick="openQuantityModal(1)" class="button" data-lang-key="buyNow">Beli Sekarang</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p data-lang-key="footerText">© 2025 Kairos Bracelet | Dibuat Oleh Kel 12</p>
+      </div>
+    </footer>
+    
+    <div id="quantity-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeQuantityModal()">&times;</span>
+        <div class="modal-body">
+            <img id="modal-product-img" src="" alt="Gambar Produk">
+            <div class="modal-details">
+                <h3 id="modal-product-name">Nama Produk</h3>
+                <p><span data-lang-key="modalUnitPrice">Harga Satuan</span>: <strong id="modal-product-price">Rp 0</strong></p>
+                <div class="quantity-selector">
+                    <button id="modal-quantity-minus">-</button>
+                    <input type="number" id="modal-quantity-input" value="1" min="1">
+                    <button id="modal-quantity-plus">+</button>
+                </div>
+                <p class="total-price-text"><span data-lang-key="modalTotalPrice">Total Harga</span>: <strong id="modal-total-price">Rp 0</strong></p>
+                <button id="modal-add-to-cart-btn" class="button" data-lang-key="addToCartBtn">Masukkan ke Keranjang</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
