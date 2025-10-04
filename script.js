@@ -1,6 +1,5 @@
 // ===================================================================================
-// DATA PRODUK
-// PERUBAHAN: Menyesuaikan semua harga produk sesuai gambar.
+// DATA PRODUK (Tidak ada perubahan)
 // ===================================================================================
 const products = [
     { id: 1, name: "Celestial Angel", price: 13000, img: "images/1.Celestial Angel.jpg", description: { id: "Gelang dengan tema langit yang memberikan kesan dingin dan menenangkan.", en: "A sky-themed bracelet that gives a cool and calming impression." }},
@@ -104,17 +103,33 @@ function loadCartItems() {
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = `<p data-lang-key="emptyCart"></p>`;
         cartTotalElement.innerText = 'Rp 0';
+        setLanguage(localStorage.getItem('lang') || 'id'); // Update text "keranjang kosong"
         return;
     }
     let total = 0;
     cart.forEach(item => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
-        cartItem.innerHTML = `<img src="${item.img}" alt="${item.name}" class="cart-item-img"><div class="cart-item-details"><h4>${item.name}</h4><p>Rp ${item.price.toLocaleString('id-ID')}</p></div><div class="cart-item-actions"><button onclick="updateQuantity(${item.id}, -1)">-</button><span>${item.quantity}</span><button onclick="updateQuantity(${item.id}, 1)">+</button></div><button onclick="removeFromCart(${item.id})" class="cart-item-remove" data-lang-key="removeBtn"></button>`;
+        // PERUBAHAN: Tombol hapus sekarang menjadi ikon di sebelah kanan tombol +
+        cartItem.innerHTML = `
+            <img src="${item.img}" alt="${item.name}" class="cart-item-img">
+            <div class="cart-item-details">
+                <h4>${item.name}</h4>
+                <p>Rp ${item.price.toLocaleString('id-ID')}</p>
+            </div>
+            <div class="cart-item-actions">
+                <button onclick="updateQuantity(${item.id}, -1)">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="updateQuantity(${item.id}, 1)">+</button>
+                <button onclick="removeFromCart(${item.id})" class="cart-item-remove" title="Hapus Item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+                </button>
+            </div>`;
         cartItemsContainer.appendChild(cartItem);
         total += item.price * item.quantity;
     });
     cartTotalElement.innerText = `Rp ${total.toLocaleString('id-ID')}`;
+    setLanguage(localStorage.getItem('lang') || 'id'); // Update tombol hapus
 }
 
 function updateQuantity(productId, change) {
@@ -143,7 +158,14 @@ function checkoutWhatsApp() {
     message += `*Total Pesanan: Rp ${total.toLocaleString('id-ID')}*\n\nTerima kasih!`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${noWhatsApp}?text=${encodedMessage}`;
+    
+    // Buka WhatsApp di tab baru
     window.open(whatsappURL, '_blank');
+
+    // PERUBAHAN: Kosongkan keranjang setelah checkout
+    localStorage.removeItem('cart'); // Hapus data dari storage
+    loadCartItems();                 // Muat ulang tampilan keranjang (menjadi kosong)
+    updateCartBadge();               // Perbarui notifikasi di header (menjadi 0)
 }
 
 function updateCartBadge() {
